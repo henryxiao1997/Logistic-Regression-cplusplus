@@ -209,7 +209,10 @@ int LogisticRegression::CalcFuncOutByFeaVecForAllClass (vector<FeaValNode> & Fea
 	{
 		ClassProbVec.at(i) /= dSum;
 		if (ClassProbVec.at(i) > dMaxProb)
+		{
 			iClassMaxProb = i;
+			dMaxProb = ClassProbVec.at(i);
+		}
 	}
 
 	return iClassMaxProb;
@@ -566,10 +569,10 @@ void LogisticRegression::Test (void)
 	SaveLRModelTxt ("Model\\Mod_Scale_001_200_001.txt");
 	LoadLRModelTxt ("Model\\Mod_Scale_001_200_001.txt");
 	PredictOnSampleFile ("..\\Data\\SamplesMultClassesTestScale.txt", "Model\\Rslt_Scale_001_200_001.txt", "Model\\Log_Scale_001_200_001.txt");*/
-	/*TrainSGDOnSampleFile ("..\\Data\\SamplesMultClassesTrainScale.txt", 6, 25334, 0.1, 200, 0.05);
+	TrainSGDOnSampleFile ("..\\Data\\SamplesMultClassesTrainScale.txt", 6, 25334, 0.1, 200, 0.05);
 	SaveLRModelTxt ("Model\\Mod_Scale_01_200_001.txt");
 	LoadLRModelTxt ("Model\\Mod_Scale_01_200_001.txt");
-	PredictOnSampleFile ("..\\Data\\SamplesMultClassesTestScale.txt", "Model\\Rslt_Scale_01_200_001.txt", "Model\\Log_Scale_01_200_001.txt");*/
+	PredictOnSampleFile ("..\\Data\\SamplesMultClassesTestScale.txt", "Model\\Rslt_Scale_01_200_001.txt", "Model\\Log_Scale_01_200_001.txt");
 	/*TrainSGDOnSampleFile ("..\\Data\\SamplesMultClassesTrainScale.txt", 6, 25334, 0.2, 200, 0.05);
 	SaveLRModelTxt ("Model\\Mod_Scale_02_200_001.txt");
 	LoadLRModelTxt ("Model\\Mod_Scale_02_200_001.txt");
@@ -583,10 +586,10 @@ void LogisticRegression::Test (void)
 	SaveLRModelTxt ("Model\\ModEx_Scale_01_200_001.txt");
 	LoadLRModelTxt ("Model\\ModEx_Scale_01_200_001.txt");
 	PredictOnSampleFile ("..\\Data\\SamplesMultClassesTestScale.txt", "Model\\RsltEx_Scale_01_200_001.txt", "Model\\LogEx_Scale_01_200_001.txt");*/
-	TrainSGDOnSampleFileEx ("..\\Data\\SamplesMultClassesTrainScale.txt", 6, 25334, 0.01, 200, 0.05);
+	/*TrainSGDOnSampleFileEx ("..\\Data\\SamplesMultClassesTrainScale.txt", 6, 25334, 0.01, 200, 0.05);
 	SaveLRModelTxt ("Model\\ModEx_Scale_001_200_001.txt");
 	LoadLRModelTxt ("Model\\ModEx_Scale_001_200_001.txt");
-	PredictOnSampleFile ("..\\Data\\SamplesMultClassesTestScale.txt", "Model\\RsltEx_Scale_001_200_001.txt", "Model\\LogEx_Scale_001_200_001.txt");
+	PredictOnSampleFile ("..\\Data\\SamplesMultClassesTestScale.txt", "Model\\RsltEx_Scale_001_200_001.txt", "Model\\LogEx_Scale_001_200_001.txt");*/
 
 	/*TrainSGDOnSampleFileEx2 ("..\\Data\\SamplesMultClassesTrainScale.txt", 6, 25334, 0.5, 200, 0.05);
 	SaveLRModelTxt ("Model\\ModEx2_Scale_05_200_001.txt");
